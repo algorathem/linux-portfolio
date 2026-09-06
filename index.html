@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07090d" />
+    <title>algorathem@helix — Helix OS</title>
+    <meta name="description" content="A Linux desktop portfolio. Boot Helix OS, open the terminal, and look around." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- BOOT -->
+    <section id="boot" class="screen boot" aria-label="Boot sequence">
+      <div class="boot-log" id="boot-log"></div>
+      <p class="boot-skip">Esc / click to skip</p>
+    </section>
+
+    <!-- LOCK -->
+    <section id="lock" class="screen lock hidden" aria-label="Lock screen">
+      <div class="lock-bg"></div>
+      <div class="lock-panel">
+        <time id="lock-clock" class="lock-clock">00:00</time>
+        <p id="lock-date" class="lock-date"></p>
+        <img class="lock-avatar" id="lock-avatar" alt="" width="84" height="84" />
+        <p class="lock-user" id="lock-user">algorathem</p>
+        <form id="unlock-form" class="unlock-form" autocomplete="off">
+          <label class="sr-only" for="unlock-pass">Password</label>
+          <input id="unlock-pass" type="password" placeholder="press enter to unlock" />
+        </form>
+        <p class="lock-hint">Helix OS · session on ntu-helix</p>
+      </div>
+    </section>
+
+    <!-- DESKTOP -->
+    <section id="desktop" class="screen desktop hidden" aria-label="Desktop">
+      <div class="wallpaper"></div>
+
+      <header class="waybar" id="waybar">
+        <div class="bar-left">
+          <button class="helix-btn" id="launcher-btn" title="Applications (Super)" aria-label="Open application launcher">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path d="M7 4.5c3.2 2.4 3.2 12.6 0 15M17 4.5c-3.2 2.4-3.2 12.6 0 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="1.6" fill="currentColor"/>
+            </svg>
+          </button>
+          <div class="workspaces" id="workspaces"></div>
+          <span class="bar-title" id="bar-title">Desktop</span>
+        </div>
+        <div class="bar-right">
+          <span class="tray" title="helix-net">wifi</span>
+          <span class="tray" id="tray-vol" title="Volume">vol 72%</span>
+          <span class="tray" id="tray-bat" title="Battery">bat 84%</span>
+          <button class="tray clock-btn" id="clock-btn" type="button"></button>
+        </div>
+      </header>
+
+      <div class="desktop-icons" id="desktop-icons"></div>
+      <div id="windows" class="windows"></div>
+
+      <nav class="dock" id="dock" aria-label="Dock"></nav>
+
+      <div id="launcher" class="launcher hidden" role="dialog" aria-label="Application launcher">
+        <div class="launcher-card">
+          <input id="launcher-search" type="search" placeholder="Search apps, files, commands…" />
+          <div class="launcher-grid" id="launcher-grid"></div>
+        </div>
+      </div>
+
+      <div id="calendar-pop" class="calendar-pop hidden"></div>
+      <div id="context-menu" class="ctx hidden" role="menu"></div>
+      <div id="notify-stack" class="notify-stack" aria-live="polite"></div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="os.js"></script>
+  </body>
+</html>
