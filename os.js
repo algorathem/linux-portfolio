@@ -520,7 +520,7 @@ ${D.skills.map((g) => `${g.group}: ${g.items.join(", ")}`).join("\n")}
     body.className = "win-body pad welcome";
     body.innerHTML = `
       <h2>Helix OS</h2>
-      <p class="prose">A rice of ${esc(D.user)}'s work. This is a Linux desktop, not a slideshow.</p>
+      <p class="prose">Projects, notes, and a terminal. Click the dock or type <span class="kbd">help</span>.</p>
       <div class="keys">
         <div><span class="kbd">Ctrl</span> + <span class="kbd">Space</span> launcher</div>
         <div><span class="kbd">Ctrl</span> + <span class="kbd">Alt</span> + <span class="kbd">T</span> terminal</div>
