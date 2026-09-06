@@ -2,6 +2,9 @@
 
 A Hyprland-inspired desktop in the browser. Boot the machine, unlock it, then use the dock, file manager, and a real-enough shell.
 
+- **Live:** https://helix-os.kcleck06.workers.dev
+- **Source:** https://github.com/algorathem/linux-portfolio
+
 Personal bits live in `data.js` (name, projects, skills, GitHub). Swap those and the desktop is yours.
 
 ## Run it
@@ -30,8 +33,8 @@ Classic Linux muscle memory: `Ctrl+Alt+T` for a terminal, `Alt+Q` to close the f
 
 ## Deploy
 
-Static files only. Drop the folder on Cloudflare Pages, Netlify, GitHub Pages, or any object store.
+```powershell
+npx wrangler deploy
+```
 
-```
-npx wrangler pages deploy . --project-name helix-os
-```
+That publishes to `https://helix-os.kcleck06.workers.dev`.
